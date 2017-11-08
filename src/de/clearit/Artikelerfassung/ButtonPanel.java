@@ -21,7 +21,7 @@ public class ButtonPanel
 	public ButtonPanel()
 	{
 		buttonPanel = new JPanel();
-		buttonPanel.setPreferredSize(new Dimension(100, 100));
+		//buttonPanel.setPreferredSize(new Dimension(1000, 200));
 		buttonPanel.setLayout(new FlowLayout());
 		buttonPanel.setBackground(Color.BLUE);
 		scrollPane = new JScrollPane(buttonPanel);
