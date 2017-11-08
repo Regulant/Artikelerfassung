@@ -3,7 +3,9 @@ package de.clearit.Artikelerfassung;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
+import java.awt.Insets;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
@@ -27,13 +29,17 @@ public class ButtonPanel
 		scrollPane = new JScrollPane(buttonPanel);
 		scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
 		
-		btn1 = new JButton("1");
+		//image = new ImageIcon(redbull.getImage());
+		
+		btn1 = new JButton();
 		btn2 = new JButton("2");
 		btn3 = new JButton("3");
 		btn4 = new JButton("4");
 		btn5 = new JButton("5");
 		
 		btn1.setPreferredSize(new Dimension(80,40));
+		btn1.setMargin(new Insets(0, 0, 0, 0));
+		btn1.setBorder(null);
 		buttonPanel.add(btn1);
 		
 		
