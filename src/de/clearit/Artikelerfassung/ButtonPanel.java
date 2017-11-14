@@ -5,11 +5,13 @@ import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Insets;
 
+import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.SwingConstants;
+import javax.swing.border.Border;
 
 public class ButtonPanel // Bildet die erste Reihe
 {
@@ -21,6 +23,7 @@ public class ButtonPanel // Bildet die erste Reihe
 	private JButton btn4;
 	private JButton btn5;
 	private JScrollPane scrollPane;
+	//private Border blackline;
 	
 	public ImageIcon redbull;
 	
@@ -29,6 +32,7 @@ public class ButtonPanel // Bildet die erste Reihe
 		//The ButtonGroup component manages the selected/unselected state for a set of buttons.
 		//For the group, the ButtonGroup instance guarantees that only one button can be selected at a time.
 		
+		//blackline = BorderFactory.createLineBorder(Color.black);
 		
 		buttonArr = new JButton[10];
 		
@@ -61,7 +65,7 @@ public class ButtonPanel // Bildet die erste Reihe
 		
 		btn1.setPreferredSize(new Dimension(80,90));
 		btn1.setMargin(new Insets(0, 0, 0, 0));
-		btn1.setBorder(btn1.getBorder());;
+		//btn1.setBorder(blackline);
 		btn1.setHorizontalTextPosition(SwingConstants.CENTER);
 		buttonPanel.add(btn1);
 		

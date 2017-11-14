@@ -3,8 +3,13 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
+import java.awt.Image;
 import java.awt.Insets;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 
+import javax.imageio.ImageIO;
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
@@ -26,7 +31,7 @@ public class ContentPanel // Bildet die zweite Reihe
 	
 	public ContentPanel()
 	{
-		redbull = new ImageIcon("./Bilder/redbull.png");
+		
 		
 		blackline = BorderFactory.createLineBorder(Color.black);
 		
@@ -53,6 +58,25 @@ public class ContentPanel // Bildet die zweite Reihe
 		contentPanel.add(textScroll, gc);
 		
 		// JLabel für Image
+		
+		redbull = new ImageIcon("./Bilder/redbull.png");
+		
+//		BufferedImage bufferedRedbull = null;
+//		try
+//		{
+//			bufferedRedbull = ImageIO.read(new File("./Bilder/redbull.png"));
+//		} catch (IOException e)
+//		{
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//		
+//		Image resizeRedbull = bufferedRedbull.getScaledInstance(imageLabel.getWidth(), 
+//			  imageLabel.getHeight(), Image.SCALE_SMOOTH);
+		
+//		ImageIcon  redbull = new ImageIcon(new ImageIcon("./Bilder/redbull.png").getImage().getScaledInstance(20, 20, Image.SCALE_DEFAULT));
+//		imageLabel.setIcon(redbull);
+		
 		
 		imageLabel = new JLabel("", redbull, JLabel.CENTER);
 		gc.gridx = 2;

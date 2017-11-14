@@ -32,8 +32,9 @@ public class MainFrame extends JFrame
 		
 		frame = new JFrame();
 		mainPanel = new JPanel();
-		btnPanel = new ButtonPanel();
 		contentPanel = new ContentPanel();
+		btnPanel = new ButtonPanel();
+		
 		
 		mainPanel.setLayout(new GridBagLayout());
 		GridBagConstraints c = new GridBagConstraints();
