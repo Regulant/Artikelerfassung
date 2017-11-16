@@ -1,26 +1,28 @@
 package de.clearit.Artikelerfassung;
 
-import java.awt.BorderLayout;
-import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-public class MainFrame extends JFrame
+public class MainFrame extends JFrame implements ActionListener
 
 {
+	private ArrayList<JButton> buttons;
+	private JButton buttonArr[];
 	private String text;
 	private JFrame frame;
 	private JPanel mainPanel;
 	private JButton newBtn;
 	private GridBagLayout mainLayout;
 	private GridBagConstraints c;
-	
 	private ContentPanel contentPanel;
 	private ButtonPanel btnPanel;
 	
@@ -34,6 +36,8 @@ public class MainFrame extends JFrame
 		mainPanel = new JPanel();
 		contentPanel = new ContentPanel();
 		btnPanel = new ButtonPanel();
+		btnPanel.setImageIcon(contentPanel.getImageIcon());
+//		btnPanel.addButtonToList(someButton);
 		
 		
 		mainPanel.setLayout(new GridBagLayout());
@@ -86,6 +90,10 @@ public class MainFrame extends JFrame
 		
 		mainPanel.add(newBtn, c);
 		
+		
+		// someComponent.addActionListener(instanceOfMyClass);    ???
+		newBtn.addActionListener(this);
+		
 		// TODO Action listener on click append new button to btnArr 
 		// bei click auf den entsprechenden button soll der verknüpfte Artikel angezeigt werden
 		// brauche ich hier erst mal mehr Verständnis für Datenbanken? 
@@ -102,6 +110,26 @@ public class MainFrame extends JFrame
 		// bisher ist alles statisch, wie muss ich umdesignen um das dynamisch besser zu machen?
 		
 		
+		
+	}
+
+
+	public void addButtonToList()
+	{
+		
 	}
 	
+	
+	@Override
+	public void actionPerformed(ActionEvent e)
+	{
+		System.out.println("button has been pressed");
+		// call addButtonToList
+		
+		
+		
+	}
+
+
+
 }

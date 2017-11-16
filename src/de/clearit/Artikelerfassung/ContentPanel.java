@@ -27,16 +27,14 @@ public class ContentPanel // Bildet die zweite Reihe
     private Border blackline;
     private JScrollPane textScroll;
     
-    public ImageIcon redbull;
+    public ImageIcon imageIconRedBull;
 	
 	public ContentPanel()
 	{
 		
-		
-		blackline = BorderFactory.createLineBorder(Color.black);
-		
 		contentPanel = new JPanel(new GridBagLayout());
 		GridBagConstraints gc = new GridBagConstraints();
+		blackline = BorderFactory.createLineBorder(Color.black);
 		
 		// Textarea
 		text = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet";
@@ -59,7 +57,7 @@ public class ContentPanel // Bildet die zweite Reihe
 		
 		// JLabel für Image
 		
-		redbull = new ImageIcon("./Bilder/redbull.png");
+		imageIconRedBull = new ImageIcon("./Bilder/redbull.png");
 		
 //		BufferedImage bufferedRedbull = null;
 //		try
@@ -78,7 +76,7 @@ public class ContentPanel // Bildet die zweite Reihe
 //		imageLabel.setIcon(redbull);
 		
 		
-		imageLabel = new JLabel("", redbull, JLabel.CENTER);
+		imageLabel = new JLabel("", imageIconRedBull, JLabel.CENTER);
 		gc.gridx = 2;
 		gc.gridy = 0;
 		gc.gridwidth = 1;
@@ -99,9 +97,9 @@ public class ContentPanel // Bildet die zweite Reihe
 		return blackline;
 	}
 
-	public ImageIcon getImage()
+	public ImageIcon getImageIcon()
 	{
-		return redbull;
+		return imageIconRedBull;
 	}
 
 	public JPanel getContentPanel()
