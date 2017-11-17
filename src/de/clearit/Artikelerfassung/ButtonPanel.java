@@ -17,7 +17,7 @@ import javax.swing.border.Border;
 public class ButtonPanel  // Bildet die erste Reihe
 {
 
-	//private ArrayList<JButton> buttons = new ArrayList<JButton>();	Kevin Code
+	private ArrayList<JButton> buttons = new ArrayList<JButton>();	
 //	private Map<String, JButton> mapButtonName2Button = new HashMap<>();	Christian Code
 	private List<JButton> listButtons = new ArrayList<>();
 	private ContentPanel contentPanel;
@@ -32,39 +32,10 @@ public class ButtonPanel  // Bildet die erste Reihe
 	private Border blackline;
 	
 	public ImageIcon imageIcon;
-	
-//	public void addButtonToList(JButton... someButtons) {
-//		for(JButton someButton : someButtons) {
-//			addButtonToList(someButton);
-//		}
-//	}
-	
-//	public void addButtonToList(JButton someButton) {
-//		
-//		mapButtonName2Button.put(someButton.getName(), someButton);
-//		
-//		listButtons.add(someButton);
-//	}
-	
-	public void setImageIcon(ImageIcon imageIcon) {
-		this.imageIcon = imageIcon;
-	}
-	
-//	public ButtonPanel() {
-//		this(null);
-//	}
-	
-	public ButtonPanel()
+	private ImageIcon copyRedbull;
+
+	public ButtonPanel(ContentPanel contentPanel)
 	{
-		// "work around" für wiederverwenden von icon
-		contentPanel = new ContentPanel();
-		
-		
-		//The ButtonGroup component manages the selected/unselected state for a set of buttons.
-		//For the group, the ButtonGroup instance guarantees that only one button can be selected at a time.
-		
-		//blackline = BorderFactory.createLineBorder(Color.black);
-		
 		
 		buttonPanel = new JPanel();
 		buttonPanel.setLayout(new FlowLayout());
@@ -72,19 +43,17 @@ public class ButtonPanel  // Bildet die erste Reihe
 		scrollPane = new JScrollPane(buttonPanel);
 		scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
 		
-		btn1 = new JButton("", contentPanel.getImageIcon());
+//		contentPanel.setImageIcon(ImageIconRedbull);
+		
+		btn1 = new JButton("");
 		btn2 = new JButton("test");
 		btn3 = new JButton("wie");
 		btn4 = new JButton("aussehen");
 		btn5 = new JButton("wird");
 		btn6 = new JButton("list");
 		
-		ArrayList<JButton> buttons = new ArrayList<JButton>();
 		buttons.add(btn6);
 		System.out.println(buttons.size());
-		
-		
-		
 		
 		btn1.setPreferredSize(new Dimension(80,90));
 		btn1.setMargin(new Insets(0, 0, 0, 0));
@@ -93,16 +62,12 @@ public class ButtonPanel  // Bildet die erste Reihe
 		
 		scrollPane.setPreferredSize(btn1.getPreferredSize());
 		
-		
 		buttonPanel.add(btn2);
 		btn2.setPreferredSize(btn1.getPreferredSize());
 		
 		buttonPanel.add(btn3);
 		buttonPanel.add(btn4);
 		buttonPanel.add(btn5);
-		
-		
-		
 	}
 
 	public JScrollPane getPanel()
@@ -111,13 +76,21 @@ public class ButtonPanel  // Bildet die erste Reihe
 	}
 	
 	
+	// Kevin Code
 	
-// Kevin Code	
-//	public void addToBtnPanel()
-//	{
-//		JButton appendButton = new JButton();
-//		buttons.add(appendButton);
-//		System.out.println("action listener macht das");
-//	}
+	public void addToBtnArray(String path)
+	{
+		ImageIcon icon = new ImageIcon(path);
+		JButton imageBtn = new JButton(icon);
+		
+		System.out.println("groesse = " + buttons.size());
+		buttons.add(imageBtn);
+		System.out.println("groesse = " + buttons.size());
+		
+		
+	}
+	
+	
+
 	
 }

@@ -28,6 +28,7 @@ public class ContentPanel // Bildet die zweite Reihe
     private JScrollPane textScroll;
     
     public ImageIcon imageIconRedBull;
+	private ImageIcon imageIcon;
 	
 	public ContentPanel()
 	{
@@ -59,23 +60,6 @@ public class ContentPanel // Bildet die zweite Reihe
 		
 		imageIconRedBull = new ImageIcon("./Bilder/redbull.png");
 		
-//		BufferedImage bufferedRedbull = null;
-//		try
-//		{
-//			bufferedRedbull = ImageIO.read(new File("./Bilder/redbull.png"));
-//		} catch (IOException e)
-//		{
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-//		
-//		Image resizeRedbull = bufferedRedbull.getScaledInstance(imageLabel.getWidth(), 
-//			  imageLabel.getHeight(), Image.SCALE_SMOOTH);
-		
-//		ImageIcon  redbull = new ImageIcon(new ImageIcon("./Bilder/redbull.png").getImage().getScaledInstance(20, 20, Image.SCALE_DEFAULT));
-//		imageLabel.setIcon(redbull);
-		
-		
 		imageLabel = new JLabel("", imageIconRedBull, JLabel.CENTER);
 		gc.gridx = 2;
 		gc.gridy = 0;
@@ -83,7 +67,6 @@ public class ContentPanel // Bildet die zweite Reihe
 		gc.gridheight = 0;
 		gc.weightx = 0.4;
 		gc.anchor = GridBagConstraints.CENTER;
-		//gc.ipadx = 10;
 		imageLabel.setPreferredSize(new Dimension(350, 400));
 		
 		imageLabel.setBorder(blackline);
@@ -100,6 +83,10 @@ public class ContentPanel // Bildet die zweite Reihe
 	public ImageIcon getImageIcon()
 	{
 		return imageIconRedBull;
+	}
+	
+	public void setImageIcon(ImageIcon imageIcon) {
+		this.imageIcon = imageIcon;
 	}
 
 	public JPanel getContentPanel()

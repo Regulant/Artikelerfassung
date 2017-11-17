@@ -26,6 +26,7 @@ public class MainFrame extends JFrame implements ActionListener
 	private ContentPanel contentPanel;
 	private ButtonPanel btnPanel;
 	
+	
 
 	public MainFrame()
 	{
@@ -35,10 +36,8 @@ public class MainFrame extends JFrame implements ActionListener
 		frame = new JFrame();
 		mainPanel = new JPanel();
 		contentPanel = new ContentPanel();
-		btnPanel = new ButtonPanel();
-		btnPanel.setImageIcon(contentPanel.getImageIcon());
-//		btnPanel.addButtonToList(someButton);
-		
+		btnPanel = new ButtonPanel(contentPanel);
+		//btnPanel.setImageIcon(contentPanel.getImageIcon());
 		
 		mainPanel.setLayout(new GridBagLayout());
 		GridBagConstraints c = new GridBagConstraints();
@@ -110,7 +109,6 @@ public class MainFrame extends JFrame implements ActionListener
 		// bisher ist alles statisch, wie muss ich umdesignen um das dynamisch besser zu machen?
 		
 		
-		
 	}
 
 
@@ -124,9 +122,7 @@ public class MainFrame extends JFrame implements ActionListener
 	public void actionPerformed(ActionEvent e)
 	{
 		System.out.println("button has been pressed");
-		// call addButtonToList
-		
-		
+		btnPanel.addToBtnArray("./Bilder/rebull.png");
 		
 	}
 
